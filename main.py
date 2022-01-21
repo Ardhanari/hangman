@@ -1,11 +1,9 @@
 import re
-import time # why tho
 
 originalPhrase = input("Feed me a sentence! \n").lower()
 
 print("\nChosen sentence: " + originalPhrase)
 print("Obscuring...")
-time.sleep(1) # because I can >:)
 
 # obscure the letters
 downWithTheLetters = re.sub(r'[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]', "-", originalPhrase)
