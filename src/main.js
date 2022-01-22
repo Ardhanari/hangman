@@ -1,13 +1,13 @@
-var phrase;
-var lettersUsed;
-var lettersFound;
-var lettersNotFound;
-var obscuredPhrase;
-var result;
-var alphabet;
-var alphabetPL = "a-zżźćńółęąś";
-var alphabetEN = "a-z";
-var alphabetES = "a-zñáéíóúü";
+var phrase = "";
+var lettersUsed = "";
+var lettersFound = "";
+var lettersNotFound = "";
+var obscuredPhrase = "";
+var result = "";
+var alphabet = "";
+var alphabetPL = "abcdefghijklmnopqrstuwxyzżźćńółęąś";
+var alphabetEN = "abcdefghijklmnopqrstuwxyz";
+var alphabetES = "abcdefghijklmnopqrstuwxyzñáéíóúü";
 
 // Functions to change languages 
 function setPolishLanguage() { 
@@ -50,21 +50,63 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
     // Replace everything in the phrase with - except letters found 
     // replace all spaces with /
     phrase = phrase.toLowerCase();
-    obscuredPhrase = phrase.replace(" ", "/"); // "hello/world"
-    for (letter in lettersUsed) {
-        if (letter in phrase) {
-            obscuredPhrase.replace(letter, "-");
-            lettersFound.append(letter);
-            console.log(obscuredPhrase);
+    obscuredPhrase = phrase;
+    console.log(obscuredPhrase);
+    
+    for (var i = 0; i < lettersUsed.length; i++) {
+        console.log("inside for loop");
+        letter = lettersUsed[i]
+        if (!(phrase.includes(letter))) { //gp
+            
+            if (alphabet.includes(letter)) {
+                lettersNotFound += letter;
+            }
+            else {
+                console.log("not a letter");
+            }
         }
-        else {
-            lettersNotFound.append(letter);
+        else { //bw
+            lettersFound += letter;
         }
     }
 
-    
+    // unique chars from string 
+    function unique_char(str1) {
+        var str=str1;
+        var uniql="";
+        for (var x=0;x < str.length;x++)
+        {
+
+        if(uniql.indexOf(str.charAt(x))==-1)
+        {
+        uniql += str[x];  
+        
+        }
+        }
+        return uniql;  
+        }  
+    var unique_characters_from_a_string = unique_char(phrase);
+    console.log(unique_characters_from_a_string);
+
+    for (var i = 0; i < unique_characters_from_a_string.length; i++) {
+        letter = unique_characters_from_a_string[i]
+        if (!(lettersFound.includes(letter))) {
+            if (alphabet.includes(letter)) {
+                console.log(letter);
+                obscuredPhrase = obscuredPhrase.replaceAll(letter, "-");
+                console.log(obscuredPhrase);
+            }
+            else {
+                if (letter = " ") {
+                    obscuredPhrase = obscuredPhrase.replaceAll(letter, "/");
+                }
+            }
+        }
+    }
 
     console.log("Obscuring done!")
+
+    return [obscuredPhrase, lettersFound, lettersNotFound];
 
 }
 
@@ -73,7 +115,7 @@ function showResult() {
     phrase = document.getElementById('phrase');
     lettersUsed = document.getElementById('used-letters');
     language = document.getElementById('language')
-    obscurePhrase(phrase, lettersUsed, language);
+    result = obscurePhrase(phrase, lettersUsed, language);
 
-    console.log(obscuredPhrase, lettersFound, lettersNotFound)
+    console.log(result);
 }
