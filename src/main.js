@@ -1,3 +1,4 @@
+// Global variables 
 var phrase = "";
 var lettersUsed = "";
 var lettersFound = "";
@@ -5,9 +6,10 @@ var lettersNotFound = "";
 var obscuredPhrase = "";
 var result = "";
 var alphabet = "";
-var alphabetPL = "abcdefghijklmnopqrstuwxyzżźćńółęąś";
-var alphabetEN = "abcdefghijklmnopqrstuwxyz";
-var alphabetES = "abcdefghijklmnopqrstuwxyzñáéíóúü";
+// Alphabets
+const alphabetPL = "abcdefghijklmnopqrstuwxyzżźćńółęąś";
+const alphabetEN = "abcdefghijklmnopqrstuwxyz";
+const alphabetES = "abcdefghijklmnopqrstuwxyzñáéíóúü";
 
 // Functions to change languages 
 function setPolishLanguage() { 
@@ -47,12 +49,12 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
         console.log("Oops, unsupported language!")
     }
 
-    // Replace everything in the phrase with - except letters found 
-    // replace all spaces with /
-    phrase = phrase.toLowerCase();
-    obscuredPhrase = phrase;
+    // convert all letters to lowercase
+    obscuredPhrase = phrase.toLowerCase();
     console.log(obscuredPhrase);
     
+    // check every used letter if it exists inside the phrase
+    // append the character into relevant string (lettersFound or lettersNotFound)
     for (var i = 0; i < lettersUsed.length; i++) {
         console.log("inside for loop");
         letter = lettersUsed[i]
@@ -70,24 +72,12 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
         }
     }
 
-    // unique chars from string 
-    function unique_char(str1) {
-        var str=str1;
-        var uniql="";
-        for (var x=0;x < str.length;x++)
-        {
-
-        if(uniql.indexOf(str.charAt(x))==-1)
-        {
-        uniql += str[x];  
-        
-        }
-        }
-        return uniql;  
-        }  
+    // prepare string with unique characters from phrasse
     var unique_characters_from_a_string = unique_char(phrase);
     console.log(unique_characters_from_a_string);
 
+    // check which letters from the phrase need to be replaced with dashes
+    // replace space with "/"
     for (var i = 0; i < unique_characters_from_a_string.length; i++) {
         letter = unique_characters_from_a_string[i]
         if (!(lettersFound.includes(letter))) {
@@ -110,12 +100,36 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
 
 }
 
+
+
 // Shows the result on the HTML page
 function showResult() {
-    phrase = document.getElementById('phrase');
-    lettersUsed = document.getElementById('used-letters');
-    language = document.getElementById('language')
+    phrase = document.getElementById('phrase').value.toString();
+    lettersUsed = document.getElementById('used-letters').value.toString();
+    language = document.getElementById('language').value.toString();
     result = obscurePhrase(phrase, lettersUsed, language);
 
     console.log(result);
+    resultString = `
+    <span>Obscured phrase:</span>
+    <span>Letters found:</span>
+    <span>Letters not found:</span>`
+
+    document.getElementById('result').innerHTML = resultString;
+    // after all actions clear the variables
 }
+
+// unique chars from string 
+function unique_char(text, alphabet) {
+    var textLower = text.toLowerCase();
+    var uniqueChars = "";
+    for (var i=0; i < textLower.length; i++){
+        if (uniqueChars.indexOf(textLower.charAt(i))==-1) {
+            uniqueChars += textLower[i];  
+        }
+    }
+    // var re = new RegExp(alphabet, "g");
+    // uniqueChars = uniqueChars.replace(re, "");
+    // // console.log(uniqueChars);
+    return uniqueChars;
+}  
