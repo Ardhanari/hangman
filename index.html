@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="styles.css">
 
+    <script src="src/main.js"></script>
+
     <title>Hangman generator</title>
 </head>
 <body>
@@ -16,20 +18,28 @@
     <div id="language-panel"></div>
 
     <h4>Choose a language</h4>
-    <a href="">Polski</a> x <a href="">English</a> x <a href="">Espagnol</a>
+    <!-- Sets the language of the page and script's behaviour -->
+    <a href="#" onclick="setPolishLanguage();">Polski</a> 
+    x
+    <a href="#" onclick="setEnglishLanguage();">English</a>
+    x
+    <a href="#" onclick="setSpanishLanguage();">Espagnol</a>
 
+    <!-- Form gathering input -->
     <div class="functional" id="functional">
         <form action="">
-            <label for="phrase">Użyta fraza</label><input id="phrase" type="text">
-            <label for="used-letters">Użyte litery</label><input id="used-letters" type="text">
-            <input type="text">
+            <label for="phrase">Phrase to encode</label><input id="phrase" name="phrase" type="text">
+            <label for="used-letters">Used letters</label><input id="used-letters" name="used-letters" type="text">
+            <input id="language" name="language" type="hidden" value="en" />
         </form>
-        <button>Generate!</button>
+        <!-- Triggers the main script -->
+        <button onclick="showResult();">Generate!</button>
     </div>
 
+    <!-- Displays masked phrase and letters used and unused -->
     <div id="result">hi</div>
 
-    <div id="credits">Made with love for postcrossing
+    <div id="credits">Made with love for postcrossing users and beyond<br>
         by Ardhanari / <span id="year"></span></div>
 
 
