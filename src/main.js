@@ -38,7 +38,7 @@ function setSpanishLanguage() {
 }
 
 // Obscures and modifies the string according to letters given by the user
-function obscurePhrase(phrase, lettersUsed, language) { // changes var values of obscuredPhrase, lettersFound, lettersNotFound
+function obscurePhrase(phrase, lettersUsed, language) { 
     
     if (language = "pl") {
         alphabet = alphabetPL;
@@ -61,7 +61,7 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
     for (var i = 0; i < lettersUsed.length; i++) {
         console.log("inside for loop");
         letter = lettersUsed[i]
-        if (!(phrase.includes(letter))) { //gp
+        if (!(phrase.includes(letter))) {
             
             if (alphabet.includes(letter)) {
                 lettersNotFound += letter;
@@ -70,7 +70,7 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
                 console.log("not a letter");
             }
         }
-        else { //bw
+        else {
             lettersFound += letter;
         }
     }
@@ -98,8 +98,6 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
     return [obscuredPhrase, lettersFound, lettersNotFound];
 
 }
-
-
 
 // Shows the result on the HTML page
 function showResult() {
@@ -132,6 +130,5 @@ function unique_char(text) {
             uniqueChars += textLower[i];  
         }
     }
-
     return uniqueChars;
 }  
