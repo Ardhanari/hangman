@@ -18,6 +18,7 @@ function setPolishLanguage() {
     document.getElementById('used-letters-label').innerHTML = "Użyte litery";
     document.getElementById('generate').innerText = "Generuj!";
     document.getElementById('language').value = "pl";
+    // I regret not splitting the code into modules now >w<"
 }
 
 function setEnglishLanguage() { 
@@ -109,12 +110,16 @@ function showResult() {
 
     console.log(result);
     resultString = `
-    <span>Obscured phrase:</span>
-    <span>Letters found:</span>
-    <span>Letters not found:</span>`
+    <span>Obscured phrase: ${result[0]}</span>
+    <span>Letters found: ${result[1]}</span>
+    <span>Letters not found: ${result[2]}</span>`
 
     document.getElementById('result').innerHTML = resultString;
+
     // after all actions clear the variables
+    phrase = "";
+    lettersFound = "";
+    lettersNotFound = "";
 }
 
 // unique chars from string 
