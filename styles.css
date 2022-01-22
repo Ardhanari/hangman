@@ -5,12 +5,25 @@ body {
     text-align: center;
 }
 
-#language-panel {
+div {
 
 }
 
-#functional {
+#language-panel {
+    width: 80%;
+    align-content: center;
+}
+
+.functional {
     text-align: center;
+    margin: auto 0;
+    display: block;
+    background-color: brown;
+    padding: 50px 10px 10px 10px;
+}
+
+form {
+    line-height: 2em;
 }
 
 label {
@@ -21,11 +34,22 @@ label {
 input {
     display: block;
     margin: auto;
+    width: 70%;
+}
+
+button {
+    width: 120px;
+    height: 2em;
+    margin: 10px;
 }
 
 #result {
-    border: 1px 1px 1px 1px red solid;
+    border-style: 1px 1px 1px 1px red solid;
     /* box-sizing: border-box; */
+    background-color: violet;
+    padding: 10px 10px 10px 10px;
+    width: 70%;
+    margin: auto;
 }
 
 #credits {
