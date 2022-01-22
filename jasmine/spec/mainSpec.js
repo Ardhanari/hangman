@@ -1,10 +1,3 @@
-// describe("helloWorld", () => {
-//     it("returns hello world", () => {
-//       var actual = helloWorld();
-//       expect(actual).toBe("hello world!");
-//     });
-//   })
-
 describe("setPolishLanguage", () => {
     it("sets form's language to Polish", () => {
         // create DOM elements
@@ -63,12 +56,12 @@ describe("obscurePhrase", () => {
 })
 
 
-// describe("unique_char", () => {
-//     it("create string with only unique characters", () => {
-//         // create DOM elements
-//         var testString = "Zawsze też był punktualny, więc było to naprawdę coś co nie pasowało do jego zachowania";
+describe("unique_char", () => {
+    it("create string with only unique characters", () => {
+        // create DOM elements
+        var testString = "Zawsze też był punktualny, więc było to naprawdę coś co nie pasowało do jego zachowania";
 
-//         // Assert
-//         expect(unique_char(testString)).toEqual("Zawsze tżbyłpunkl,ięcordśjgh");
-//     });
-// })
+        // Assert
+        expect(unique_char(testString)).toEqual("zawse tżbyłpunkl,ięcordśjgh");
+    });
+})

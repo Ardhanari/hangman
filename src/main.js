@@ -51,7 +51,6 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
 
     // convert all letters to lowercase
     obscuredPhrase = phrase.toLowerCase();
-    console.log(obscuredPhrase);
     
     // check every used letter if it exists inside the phrase
     // append the character into relevant string (lettersFound or lettersNotFound)
@@ -73,18 +72,15 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
     }
 
     // prepare string with unique characters from phrasse
-    var unique_characters_from_a_string = unique_char(phrase);
-    console.log(unique_characters_from_a_string);
+    var uniqueCharacters = unique_char(phrase);
 
     // check which letters from the phrase need to be replaced with dashes
     // replace space with "/"
-    for (var i = 0; i < unique_characters_from_a_string.length; i++) {
-        letter = unique_characters_from_a_string[i]
+    for (var i = 0; i < uniqueCharacters.length; i++) {
+        letter = uniqueCharacters[i]
         if (!(lettersFound.includes(letter))) {
             if (alphabet.includes(letter)) {
-                console.log(letter);
                 obscuredPhrase = obscuredPhrase.replaceAll(letter, "-");
-                console.log(obscuredPhrase);
             }
             else {
                 if (letter = " ") {
@@ -93,7 +89,6 @@ function obscurePhrase(phrase, lettersUsed, language) { // changes var values of
             }
         }
     }
-
     console.log("Obscuring done!")
 
     return [obscuredPhrase, lettersFound, lettersNotFound];
@@ -120,16 +115,15 @@ function showResult() {
 }
 
 // unique chars from string 
-function unique_char(text, alphabet) {
-    var textLower = text.toLowerCase();
+function unique_char(text) {
+    var textLower = text.toString().toLowerCase();
     var uniqueChars = "";
-    for (var i=0; i < textLower.length; i++){
-        if (uniqueChars.indexOf(textLower.charAt(i))==-1) {
+
+    for (var i = 0; i < textLower.length; i++){
+        if (uniqueChars.indexOf(textLower.charAt(i)) == -1) {
             uniqueChars += textLower[i];  
         }
     }
-    // var re = new RegExp(alphabet, "g");
-    // uniqueChars = uniqueChars.replace(re, "");
-    // // console.log(uniqueChars);
+
     return uniqueChars;
 }  
