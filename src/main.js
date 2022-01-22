@@ -16,6 +16,7 @@ function setPolishLanguage() {
     console.log("Polish")
     document.getElementById('phrase-label').innerHTML = "Fraza do ukrycia";
     document.getElementById('used-letters-label').innerHTML = "Użyte litery";
+    document.getElementById('generate').innerText = "Generuj!";
     document.getElementById('language').value = "pl";
 }
 
@@ -23,6 +24,7 @@ function setEnglishLanguage() {
     console.log("Eng")
     document.getElementById('phrase-label').innerHTML = "Phrase to obscure";
     document.getElementById('used-letters-label').innerHTML = "Used letters";
+    document.getElementById('generate').innerText = "Generate!";
     document.getElementById('language').value = "en";
 }
 
@@ -30,6 +32,7 @@ function setSpanishLanguage() {
     console.log("Espagnol")
     document.getElementById('phrase-label').innerHTML = "Frase para ocultar";
     document.getElementById('used-letters-label').innerHTML = "Letras utilizadas";
+    document.getElementById('generate').innerText = "Producir!";
     document.getElementById('language').value = "es";
 }
 

@@ -15,15 +15,26 @@
     
 <content>
 
-    <div id="language-panel"></div>
+    
 
-    <h4>Choose a language</h4>
-    <!-- Sets the language of the page and script's behaviour -->
-    <a href="#" onclick="setPolishLanguage();">Polski</a> 
-    x
-    <a href="#" onclick="setEnglishLanguage();">English</a>
-    x
-    <a href="#" onclick="setSpanishLanguage();">Espagnol</a>
+    <div id="language-panel">
+        <h4>Choose a language</h4>
+        <!-- Sets the language of the page and script's behaviour -->
+        <a href="#" onclick="setPolishLanguage();">Polski</a> 
+        x
+        <a href="#" onclick="setEnglishLanguage();">English</a>
+        x
+        <a href="#" onclick="setSpanishLanguage();">Espagnol</a>
+    </div>
+
+    <div id=intro>
+        <span>
+            Do you often play hangman on a forum? are you tired of manually counting the letters, revealing those guessed and keeping track of letters which were used? 
+        </span>
+        <span>
+            Now this simple form will do it all for you :)
+        </span>
+    </div>
 
     <!-- Form gathering input -->
     <div class="functional" id="functional">
@@ -33,11 +44,15 @@
             <input id="language" name="language" type="hidden" value="en" />
         </form>
         <!-- Triggers the main script -->
-        <button onclick="showResult();">Generate!</button>
+        <button id="generate" onclick="showResult();">Generate!</button>
     </div>
 
     <!-- Displays masked phrase and letters used and unused -->
-    <div id="result">hi</div>
+    <div class="result">
+        <span></span>
+        <div id="result"></div>
+
+    </div>
 
     <div id="credits">Made with love for postcrossing users and beyond<br>
         by Ardhanari / <span id="year"></span></div>

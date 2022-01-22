@@ -1,25 +1,25 @@
 body {
-    font-family:'Courier New', Courier, monospace;
-    font-size: 1.5em;
+    font-family: Arial, sans-serif;
+    font-size: 1.15em;
     color:midnightblue;
     text-align: center;
 }
 
-div {
-
+span { 
+    display: block;
 }
 
-#language-panel {
-    width: 80%;
-    align-content: center;
+#language-panel, #intro {
+    margin-bottom: 30px;
 }
 
 .functional {
     text-align: center;
-    margin: auto 0;
+    margin: auto;
     display: block;
-    background-color: brown;
-    padding: 50px 10px 10px 10px;
+    background-color: #3475b9;
+    padding: 50px 30px 50px 30px;
+    width: 80%;
 }
 
 form {
@@ -46,10 +46,11 @@ button {
 #result {
     border-style: 1px 1px 1px 1px red solid;
     /* box-sizing: border-box; */
-    background-color: violet;
-    padding: 10px 10px 10px 10px;
-    width: 70%;
+    background-color: #d72147;
+    padding: 30px;
+    width: 80%;
     margin: auto;
+    text-align: left;
 }
 
 #credits {
