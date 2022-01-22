@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Hangman generator</title>
+</head>
+<body>
+    
+<content>
+
+    <div id="language-panel"></div>
+
+    <h4>Choose a language</h4>
+    <a href="">Polski</a> x <a href="">English</a> x <a href="">Espagnol</a>
+
+    <div class="functional" id="pl-functional">
+        <label for="pl-phrase">Użyta fraza</label><input id="pl-phrase" type="text">
+        <label for="pl-used-letters">Użyte litery</label><input id="pl-used-letters" type="text">
+        <input type="text">
+    </div>
+
+    <div id="result">hi</div>
+
+    <div id="credits">Made with love for postcrossing
+        by Ardhanari / <span id="year"></span></div>
+
+
+</content>
+
+<script type="text/javascript" >
+    document.getElementById("year").innerHTML = (new Date().getFullYear());
+</script>
+
+</body>
+</html>

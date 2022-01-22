@@ -1,0 +1,36 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    color:midnightblue;
+    text-align: center;
+}
+
+#language-panel {
+
+}
+
+#functional {
+    text-align: center;
+}
+
+label {
+    display: block;
+    align-self: center;
+}
+
+input {
+    display: block;
+    margin: auto;
+}
+
+#result {
+    border: 1px 1px 1px 1px red solid;
+    /* box-sizing: border-box; */
+}
+
+#credits {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
