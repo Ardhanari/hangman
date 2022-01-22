@@ -6,19 +6,31 @@ body {
 }
 
 span { 
-    display: block;
+    
+}
+
+h4 { 
+    margin-block-start: 1.3em;
+    margin-block-end: 0.3em;
 }
 
 #language-panel, #intro {
     margin-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#intro > span { 
+    display: block;
 }
 
 .functional {
     text-align: center;
     margin: auto;
     display: block;
-    background-color: #3475b9;
-    padding: 50px 30px 50px 30px;
+    /* background-color: #3475b9; */
+    border: 10px #3475b9 solid;
+    padding: 50px 20px 50px 20px;
     width: 80%;
 }
 
@@ -44,18 +56,32 @@ button {
 }
 
 #result {
-    border-style: 1px 1px 1px 1px red solid;
+    border: 10px #d72147 solid;
+    display: block;
     /* box-sizing: border-box; */
-    background-color: #d72147;
-    padding: 30px;
+    background-color: #fff;
+    padding: 20px;
     width: 80%;
     margin: auto;
     text-align: left;
 }
 
+#result > span { 
+    display: block;
+    line-height: 1.66em;
+}
+
 #credits {
+    font-size: 0.75em;
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
 }
+
+@media only screen and (min-width: 1600px) {
+    body {
+      width: 50%;
+      margin: auto;
+    }
+  }
