@@ -55,9 +55,6 @@ function obscurePhrase(phrase, lettersUsed, language) {
 
     // convert all letters to lowercase
     obscuredPhrase = phrase.toLowerCase();
-    // obscuredPhrase = phrase.slice(0);
-    // obscuredPhrase.toUpperCase();
-    // console.log("old string" + phrase);
     console.log("new string" + obscuredPhrase);
     
     // check every used letter if it exists inside the phrase
