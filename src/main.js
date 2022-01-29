@@ -7,9 +7,9 @@ var obscuredPhrase = "";
 var result = "";
 var alphabet = "";
 // Alphabets
-const alphabetPL = "abcdefghijklmnopqrstuwxyzżźćńółęąś";
-const alphabetEN = "abcdefghijklmnopqrstuwxyz";
-const alphabetES = "abcdefghijklmnopqrstuwxyzñáéíóúü";
+const alphabetPL = "abcdefghijklmnopqrstuvwxyzżźćńółęąśABCDEFGHIJKLMNOPQRSTUVWXYZŻŹĆŃÓŁĘĄŚ";
+const alphabetEN = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const alphabetES = "abcdefghijklmnopqrstuvwxyzñáéíóúüABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ";
 
 // Functions to change languages 
 function setPolishLanguage() { 
