@@ -7,9 +7,9 @@ var obscuredPhrase = "";
 var result = "";
 var alphabet = "";
 // Alphabets
-const alphabetPL = "abcdefghijklmnopqrstuwxyzżźćńółęąś";
-const alphabetEN = "abcdefghijklmnopqrstuwxyz";
-const alphabetES = "abcdefghijklmnopqrstuwxyzñáéíóúü";
+const alphabetPL = "abcdefghijklmnopqrstuvwxyzżźćńółęąś";
+const alphabetEN = "abcdefghijklmnopqrstuvwxyz";
+const alphabetES = "abcdefghijklmnopqrstuvwxyzñáéíóúü";
 
 // Functions to change languages 
 function setPolishLanguage() { 
@@ -55,6 +55,10 @@ function obscurePhrase(phrase, lettersUsed, language) {
 
     // convert all letters to lowercase
     obscuredPhrase = phrase.toLowerCase();
+    // obscuredPhrase = phrase.slice(0);
+    // obscuredPhrase.toUpperCase();
+    // console.log("old string" + phrase);
+    console.log("new string" + obscuredPhrase);
     
     // check every used letter if it exists inside the phrase
     // append the character into relevant string (lettersFound or lettersNotFound)
@@ -76,7 +80,7 @@ function obscurePhrase(phrase, lettersUsed, language) {
     }
 
     // prepare string with unique characters from phrasse
-    var uniqueCharacters = unique_char(phrase);
+    var uniqueCharacters = unique_char(phrase).toLowerCase();
 
     // check which letters from the phrase need to be replaced with dashes
     // replace space with "/"
@@ -101,8 +105,8 @@ function obscurePhrase(phrase, lettersUsed, language) {
 
 // Shows the result on the HTML page
 function showResult() {
-    phrase = document.getElementById('phrase').value.toString();
-    lettersUsed = document.getElementById('used-letters').value.toString();
+    phrase = document.getElementById('phrase').value.toString().toLowerCase();
+    lettersUsed = document.getElementById('used-letters').value.toString().toLowerCase();
     language = document.getElementById('language').value.toString();
     result = obscurePhrase(phrase, lettersUsed, language);
 
